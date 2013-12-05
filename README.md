@@ -1,6 +1,8 @@
 # mame
 
-another theme for [Hexo].
+another theme for Hexo.
+
+[demo](http://yukir.net/).
 
 ## Install
 
