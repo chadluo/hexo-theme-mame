@@ -1,0 +1,26 @@
+<% if (index){ %>
+<li class="post-item">
+  <%- partial('post/title') %>
+</li>
+<% } else { %>
+
+<article class="single ty-basic ty-indent ty-wide <%= item.layout %>">
+  <header class="single_title">
+    <%- partial('post/title') %>
+  </header>
+  <% if (item.photos){ %>
+    <%- partial('post/gallery') %>
+  <% } %>
+  <%- item.content %>
+  <% if (item.layout == 'post') { %>
+  <footer class="meta">
+    <%- partial('post/meta') %>
+    <div class="clearfix"></div>
+  </footer>
+  <% } %>
+  <hr>
+</article>
+
+<% } %>
+
+<%- partial('comment') %>

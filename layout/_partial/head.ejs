@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <%
+  var title = '';
+  if (page.current > 1) title = __('page', page.current);
+  else if (page.title) title = page.title;
+  else if (page.category) title = page.category;
+  else if (page.tag) title = page.tag;
+  else if (page.archive){
+    if (page.year) title = page.year + (page.month ? '/' + page.month : '');
+    else title = __('archive_a');
+  }
+  else title = config.title;
+  %>
+  <title><%= title %></title>
+  <% if (config.author){ %><meta name="author" content="<%= config.author %>"><% } %>
+  <% if (page.description){ %> <meta name="description" content="<%= page.description %>">
+  <% } else if (config.description){ %> <meta name="description" content="<%= config.description %>">
+  <% } else if (page.excerpt){ %> <meta name="description" content="<%= strip_html(page.excerpt).replace(/^\s*/, '').replace(/\s*$/, '') %>">
+  <% } else if (page.content){ %> <meta name="description" content="<%= strip_html(page.content).replace(/^\s*/, '').replace(/\s*$/, '').substring(0, 150) %>">
+  <% } %>
+<% if (page.keywords){ %><meta name="keywords" content="<%= page.keywords %>"><% } %>
+  <% if (page.title){ %><meta property="og:title" content="<%= page.title %>"/><% } %>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:site_name" content="<%= config.title %>"/>
+<% if(page.cover) { %> <meta property="og:image" content="<%= page.cover %>" />
+  <% } else { %> <meta property="og:image" content="<%= config.cover %>"/>
+  <% } %>
+  <link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QcOECYNkcJSmwAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAA8ElEQVRYw+1WywrCMBDcXetvCpaCeLAf00MvlvqhVtaLlDam+0gDImTOmcm+ZhOAgoKCf0NbD5yTh6ki3dhgDh7uycAShMbDvWWXgrDwMEfPY0FYedjWg3TGPHDLIDyDSt7MtHO382BurVQBDkTYkbmLR0LZWXPLRtldPFJ6LolJPd/khW0lQ7liYpaB++LFZoqM074Sm/hlnXZ1c5LDavwRgv5x8ViUu7HZtqFjp8+ZX093l9VE0YUNpYxmEWYARPOyQin7cAhRy/w5cXi5yEvZhFHLVHgAZoBjhWC8zPzKkiC2frd1SUz5YxQUFPwcb7LOfPn2a8s/AAAAAElFTkSuQmCC" type="image/png">
+  <link rel="alternate" href="<% if (theme.rss){ %><%- theme.rss %><% } else { %><%- config.root %>atom.xml<% } %>" title="<%= config.title %>" type="application/atom+xml">
+  <link rel="stylesheet" media="screen" type="text/css" href="<%- config.root %>css/ty.css">
+  <link rel="stylesheet" media="screen" type="text/css" href="<%- config.root %>css/style.css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+</head>

@@ -1,0 +1,9 @@
+<% if (item.link){ %>
+  <h1 class="title"><a href="<%- item.link %>"><%= item.title %></a></h1>
+<% } else { %>
+  <% if (index){ %>
+    <h1 class="title"><a href="<%- config.root %><%- item.path %>"><%= item.title %></a></h1>
+  <% } else { %>
+    <h1 class="title"><%= item.title %></h1>
+  <% } %>
+<% } %>

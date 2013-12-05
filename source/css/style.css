@@ -1,0 +1,148 @@
+/* ==== layout ==== */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    font-family:
+        "Lucida Grande",
+        "Hiragino Sans GB",
+        "WenQuanYi Micro Hei",
+        "Helvetica",
+        sans-serif;
+    text-shadow: 0 0 1px rgba(0,0,0,0.15);
+}
+
+/*header*/
+.banner {
+    background: #000;
+    height: 0.5rem;
+    margin-bottom: 8vmin;
+}
+
+/*section*/
+.main {
+    width: 85%;
+    max-width: 35rem;
+    min-width: 15rem;
+    margin: 3rem auto;
+    padding: 0;
+}
+
+/*footer*/
+.site-footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 0;
+    width: 85%;
+    max-width: 35rem;
+    min-width: 15rem;
+    padding: 0;
+    z-index: -1;
+}
+
+/* ==== general ==== */
+
+a {
+    text-decoration: none;
+}
+
+a:focus {
+    outline: none;
+    color: #000;
+    background-color: #FF0;
+}
+
+h1, h2 {
+    font-weight: normal;
+}
+
+/*.banner h1*/
+.logo { display: none; }
+
+.posts {
+    margin: 0;
+    padding: 0;
+}
+
+/*nav*/
+.pagination {
+    line-height: 2rem;
+    clear: both;
+}
+
+/*section li*/
+.post-item,
+.post-item .title {
+    display: inline;
+    float: left;
+    margin: 0 0.125rem 0 0;
+    padding: 0;
+    font-size: 2rem;
+    line-height: 3rem;
+}
+
+.single_title {
+    margin: 0 -2rem;
+}
+
+/*footer ul*/
+.navi-menu {
+    margin: 0;
+    padding: 0;
+}
+
+/*footer li*/
+.menu-item {
+    display: inline;
+    line-height: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.post-item:after,
+.menu-item:after {
+    content: " / ";
+}
+
+.post-item:last-of-type:after,
+.menu-item:last-of-type:after {
+    content: none;
+}
+
+.meta {
+    line-height: 2rem;
+    margin: 0;
+}
+
+.single .title {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.single a[title^="Flickr"] {
+    margin-left: -40px;
+}
+
+/* ==== color ==== */
+
+a {
+    color: #6e5F57;
+}
+
+a:hover {
+    color: #97867c;
+}
+
+::selection,
+::-moz-selection {
+    color: #000;
+    background: #E0E0E0;
+}
+
+.main {
+    background: #FFF;
+}
