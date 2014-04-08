@@ -8,9 +8,6 @@
   <header class="single_title">
     <%- partial('post/title') %>
   </header>
-  <% if (item.photos){ %>
-    <%- partial('post/gallery') %>
-  <% } %>
   <%- item.content %>
   <% if (item.layout == 'post') { %>
   <footer class="meta">
