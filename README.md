@@ -2,7 +2,7 @@
 
 another theme for Hexo.
 
-[demo](http://yukir.net/).
+[demo](http://yukir.net/nagare/).
 
 ## Install
 
